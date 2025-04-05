@@ -1,0 +1,15 @@
+name: Test
+
+on:
+    pull_request:
+    push:
+        branches: [main]
+    workflow_dispatch:
+
+jobs:
+    banned-command:
+        name: Check for banned commands
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4.1.7
+            - run: ./tests/banned-commands.sh
