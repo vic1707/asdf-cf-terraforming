@@ -20,9 +20,9 @@ sort_semver() {
 
 list_github_semver_tags() {
 	git ls-remote --tags --refs "$REPO_URL" \
-		| grep -o "refs/tags/$TOOL_NAME-.*" \
+		| grep -o "refs/tags/v.*" \
 		| cut -d/ -f3- \
-		| sed "s/^$TOOL_NAME-//" \
+		| sed "s/^v//" \
 		| grep -oE '^[0-9]+\.[0-9]+\.[0-9]+$' \
 		| uniq
 }

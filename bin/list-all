@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+# shellcheck source=lib/utils
+. "$(dirname "$0")/../lib/utils"
+
+list_github_semver_tags \
+	| sort_semver \
+	| xargs printf '%s '
