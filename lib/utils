@@ -9,7 +9,7 @@ TAG_PREFIX="v"
 
 dl_link() {
     RELEASE_BASE_URL="$REPO_URL/releases/download/$TAG_PREFIX$ASDF_INSTALL_VERSION"
-    platform="$(uname -s)" # | tr '[:upper:]' '[:lower:]' # to lowercase
+    platform="$(uname -s | tr '[:upper:]' '[:lower:]')"
     arch="$(uname -m)"
     DL_FILE="${TOOL_NAME}_${platform}_${arch}.tar.gz"
 
